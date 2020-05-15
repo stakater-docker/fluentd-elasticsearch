@@ -1,4 +1,4 @@
-FROM openshift/origin-logging-fluentd:v3.11
+FROM openshift/origin-logging-fluentd:v3.11.0
 
 
 RUN gem install -N --conservative --minimal-deps --no-ri --no-doc \
@@ -22,7 +22,8 @@ RUN gem install -N --conservative --minimal-deps --no-ri --no-doc \
      'fluent-plugin-detect-exceptions:0.0.11' \
      'fluent-plugin-multi-format-parser:<1.0.0' \
      'fluent-plugin-slack:0.6.7' \
-     'oj:3.6.5'
+     'oj:3.6.5' \
+     'fluent-plugin-pagerduty:0.1.0'
 
 
 WORKDIR ${HOME}
